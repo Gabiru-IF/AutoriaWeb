@@ -1,0 +1,81 @@
+body{
+
+    background-color: rgb(226, 226, 226);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#Header{
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    
+
+}
+
+#Header h1{
+
+    text-align: center;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: aliceblue;
+    flex-grow: 1;
+    font-weight: bold;
+
+}
+
+#Header #icone_lucas{
+
+    width: 3%;
+    height: 3%;
+
+}
+
+#navegação #botões{
+
+    text-align: center;
+    background-color: #11005f;
+
+}
+
+#navegação #botões #button{
+
+    display: inline-block;
+
+}
+
+#main{
+
+    padding-left: 20px;
+}
+
+#Sobre{
+
+    background-color:azure;
+}
+
+#Serviços{
+
+    background-color:azure;
+
+}
+
+#Contato{
+
+    background-color:azure;
+    padding-left: 20px;
+
+}
+
+#footer{
+
+    position: fixed;
+    color: aliceblue;
+    bottom: 0;
+    width: 100%;
+    background-color: #11005f;
+    padding: 10px;
+    text-align: center;
+
+}
