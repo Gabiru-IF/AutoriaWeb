@@ -2,7 +2,7 @@ let listaProdutos = []
 
 function gravarProduto(){
 
-    let nomeProduto = document.getElementById('nomeProduto').value
+    let nomeProduto = document.getElementById('nomeProdutos').value
     let qtdEstoque = document.getElementById('qtdEstoque').value
     let valorUnitario = document.getElementById('valorUnitario').value
     let fornecedor = document.getElementById('forcenedor').value
