@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produtos</title>
+</head>
+<body>
+    <h1>Cadastro de Produtos</h1>
+    <hr />
+
+    <form>
+
+        <table>
+            <tr>
+                <td>Nome dos Produtos: </td>
+                <td><input type="text" id="nomeProdutos" maxlength="50"></td>
+            </tr>
+            <tr>
+                <td>Quantidade em Estoque: </td>
+                <td><input type="number" id="qtdEstoque"></td>
+            </tr>
+            <tr>
+                <td>Valor Unitário: </td>
+                <td><input type="number" id="valorUnitario"></td>
+            </tr>
+            <tr>
+                <td>Fornecedor: </td>
+                <td><input type="text" id="fornecedor"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="button" onclick="gravarProduto()"> Gravar </button>
+                    <button type="reset"> Limpar </button>
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+
+    <hr />
+
+    <h2>Lista de Produtos Cadastrados</h2>
+    <table border="1">
+
+        <tr>
+
+            <th>#</th>
+            <th>Nome do Produto</th>
+            <th>Quantidade em Estoque</th>
+            <th>Valor Unitário</th>
+            <th>Fornecedor</th>
+            <th>Alterar</th>
+            <th>Excluir</th>
+
+        </tr>
+
+        <tbody id="conteudo">
+
+            <tr>
+                <td colspan="7">Nenhum Produto Cadastrado até o momento</td>
+            </tr>
+
+        </tbody>
+
+
+    </table>
+
+    <script src="Exercício002.js"></script>
+    
+</body>
+</html>

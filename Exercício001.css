@@ -8,8 +8,6 @@ body{
 
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #000000;
     
 
@@ -22,49 +20,55 @@ body{
     color: aliceblue;
     flex-grow: 1;
     font-weight: bold;
+    font-size: 40px;
 
 }
 
 #Header #icone_lucas{
 
-    width: 3%;
-    height: 3%;
+    width: 4%;
+    height: 4%;
 
 }
 
-#navegação #botões{
-
-    text-align: center;
+#navegação{
     background-color: #11005f;
+    text-align: center;
 
 }
 
-#navegação #botões #button{
+#navegação a{
 
-    display: inline-block;
-
+    color: aliceblue;
 }
 
 #main{
 
-    padding-left: 20px;
+
 }
 
 #Sobre{
 
+    width: fit-content;
+    padding: 15px;
+    margin: 20px auto;
     background-color:azure;
+    border-radius: 10px
 }
 
 #Serviços{
 
     background-color:azure;
+    padding: 15px;
+    border-radius: 10px;
 
 }
 
 #Contato{
-
+    margin-top: 20px;
     background-color:azure;
-    padding-left: 20px;
+    padding: 15px;
+    border-radius: 10px;
 
 }
 
