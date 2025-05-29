@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Merriweather:wght@700&display=swap');
+
+html, body{
+
+    height: 100%;
+    margin: 0;
+    background-color: azure;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    
+}
+
+h1, h2 {
+
+    font-family: 'Merriweather', serif;
+    color: rgb(36, 0, 90);
+
+}
+
+p {
+    font-family: 'Roboto', sans-serif; /* Fonte para textos */
+    text-align: justify; /* Justifica os textos */
+    margin: 0;
+}
+
+#Container {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh; 
+    align-items: stretch;
+    gap: 20px; 
+}
+
+#Perfil {
+
+    margin-left: 20px;
+    width: 30%;
+    background-color: aliceblue;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#Imagem img {
+
+    margin-left: -20px;
+    width: 75%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 25%;
+}
+
+#Detalhes {
+
+    width: 70%;
+    padding: 20px;
+    box-sizing: border-box;
+
+}
+
+#Sobremim p {
+    text-align: justify;
+    margin: 0; 
+}
+
+#h2 {
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: disc;
+    padding: 0;
+}
+ul li {
+    margin-bottom: 10px;
+}
+
+#Contato ul li a {
+    color: rgb(93, 0, 233); 
+    text-decoration: none;
+    transition: color 0.3s ease; 
+}
+
+#Contato ul li a:visited {
+    color: rgb(93, 0, 233); 
+}
+
+#Contato ul li a:hover {
+    color: rgb(36, 0, 90);; /* Cor ao passar o mouse */
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+#Contato ul li a:active {
+    color: rgb(93, 0, 233); /* Mantém a cor inicial ao clicar */
+}
+
+#Entre\ em\ Contato {
+    margin-top: 20px;
+    margin-left: -20px;
+    padding: 20px;
+    border: 2px solid rgb(36, 0, 90);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#Entre\ em\ Contato h2 {
+    margin-top: 0px; /* Aproxima o título do topo da caixa */
+}   
+
+input, textarea, button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    resize: none;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    #Container {
+        flex-direction: column; /* Alinha os elementos verticalmente */
+    }
+
+    #Perfil, #Detalhes {
+        width: 100%; /* Ambos ocupam 100% da largura */
+    }
+
+    #Entre\ em\ Contato {
+        margin-left: 0; /* Remove deslocamento lateral */
+    }
+    #Imagem img {
+        width: 80%; /* Reduz a largura da imagem em telas médias */
+    }
+}
+
+@media (max-width: 480px) {
+    h1, h2 {
+        font-size: 1.5rem; /* Reduz o tamanho dos títulos */
+    }
+
+    p {
+        font-size: 1rem; /* Reduz o tamanho dos textos */
+    }
+
+    input, textarea, button {
+        font-size: 0.9rem; /* Ajusta o tamanho dos campos de entrada */
+    }
+    #Imagem img {
+        width: 70%; /* Reduz ainda mais a largura da imagem em telas pequenas */
+    }
+}
