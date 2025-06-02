@@ -4,15 +4,56 @@ html, body{
 
     height: 100%;
     margin: 0;
-    background-color: azure;
+    background-color: #181818;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     
+}
+
+.card {
+    
+    margin-top: 20px;
+    margin-left: -20px;
+    padding: 20px;
+    background-color: #222;
+    border: 2px solid #b30000;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    transition: 
+        transform 0.5s ease,
+        box-shadow 0.5s ease,
+        background-color 0.5s ease;
+}
+
+.card h2 {
+    
+    margin-top: 0px; 
+    color: #ffd700;
+    font-family: 'Merriweather', serif;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px #000;
+
+}
+
+.card:hover {
+    transform: translateY(-4px) scale(1.015);
+    box-shadow: 0 8px 32px rgba(179,0,0,0.18);
+    background-color: #2d0000;
 }
 
 h1, h2 {
 
     font-family: 'Merriweather', serif;
-    color: rgb(36, 0, 90);
+    color: #ffd700;
+    text-shadow: 1px 1px 2px #000;
+}
+
+#nome{
+
+    font-family: 'Merriweather', serif;
+    font-size: 40px;
+    margin-top: 40px;
+    color: #ffd700;
+    text-shadow: 2px 2px 4px #000;
 
 }
 
@@ -20,6 +61,7 @@ p {
     font-family: 'Roboto', sans-serif; /* Fonte para textos */
     text-align: justify; /* Justifica os textos */
     margin: 0;
+    color: #fff;
 }
 
 #Container {
@@ -33,8 +75,11 @@ p {
 #Perfil {
 
     margin-left: 20px;
-    width: 30%;
-    background-color: aliceblue;
+    width: 30%;  
+    background-color: #222;
+    border: 2px solid #b30000;
+    border-radius: 10px;    
+    box-shadow: 0px 4px 16px rgba(0,0,0,0.5);
     padding: 20px;
     box-sizing: border-box;
 }
@@ -69,41 +114,34 @@ p {
 ul {
     list-style-type: disc;
     padding: 0;
+    padding-left: 10px;
 }
 ul li {
     margin-bottom: 10px;
+    color: #fff;
 }
 
 #Contato ul li a {
-    color: rgb(93, 0, 233); 
+    color: #ff3333; 
     text-decoration: none;
     transition: color 0.3s ease; 
 }
 
 #Contato ul li a:visited {
-    color: rgb(93, 0, 233); 
+    color: #ff3333; 
 }
 
 #Contato ul li a:hover {
-    color: rgb(36, 0, 90);; /* Cor ao passar o mouse */
+    color: #ffd700;
     text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
 }
 
 #Contato ul li a:active {
-    color: rgb(93, 0, 233); /* Mantém a cor inicial ao clicar */
+    color: #ff3333;
 }
 
-#Entre\ em\ Contato {
-    margin-top: 20px;
-    margin-left: -20px;
-    padding: 20px;
-    border: 2px solid rgb(36, 0, 90);
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#Entre\ em\ Contato h2 {
-    margin-top: 0px; /* Aproxima o título do topo da caixa */
+#EntreEmContato h2 {
+    margin-top: 0px;
 }   
 
 input, textarea, button {
@@ -114,36 +152,92 @@ input, textarea, button {
     box-sizing: border-box;
 }
 
+/* Animação suave para cartões/seções */
+#Perfil, #Detalhes, #EntreEmContato {
+    transition: 
+        transform 0.5s ease,
+        box-shadow 0.5s ease,
+        background-color 0.5s ease;
+}
+
+/* Efeito hover mais sutil */
+#Perfil:hover, #Detalhes:hover, #EntreEmContato:hover {
+    transform: translateY(-4px) scale(1.015);
+}
+
+/* Ícones animados mais suaves */
+#Habilidades i, #Contato i, #Habilidades ul li i, #Contato ul li i {
+    margin-right: 8px;
+    color: #ffd700;
+    transition: color 0.4s ease, transform 0.4s cubic-bezier(.4,2,.6,1);
+}
+
+#Habilidades ul li:hover i, #Contato ul li:hover i {
+    color:  #ff3333;
+    transform: scale(1.08) rotate(-5deg);
+}
+
 @media (max-width: 768px) {
     #Container {
         flex-direction: column; /* Alinha os elementos verticalmente */
     }
 
     #Perfil, #Detalhes {
-        width: 100%; /* Ambos ocupam 100% da largura */
+        width: 100%;
+        margin-left: 0 !important; /* Remove margem lateral no mobile */
+        margin-right: 0;
+        padding: 0;
     }
 
-    #Entre\ em\ Contato {
-        margin-left: 0; /* Remove deslocamento lateral */
+    #Perfil {
+        margin-left: 0 !important;
+        width: 95% !important;
+        background-color: #222 !important;
+        border: 2px solid #b30000 !important;
+        border-radius: 10px !important;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5) !important;
+        padding: 12px !important;
+        box-sizing: border-box !important;
+        margin: 16px auto !important; 
     }
+
     #Imagem img {
-        width: 80%; /* Reduz a largura da imagem em telas médias */
+        width: 80%; 
     }
 }
 
 @media (max-width: 480px) {
+    #Container {
+        align-items: center;
+        justify-content: center;
+    }
+    #Perfil, #Detalhes {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+    }
+    .card {
+        width: 95%;
+        margin: 16px auto; 
+        box-sizing: border-box;
+        padding: 12px;
+    }
     h1, h2 {
-        font-size: 1.5rem; /* Reduz o tamanho dos títulos */
+        font-size: 1.3rem;
     }
-
-    p {
-        font-size: 1rem; /* Reduz o tamanho dos textos */
+    #nome {
+        font-size: 2rem;
+        text-align: center;
     }
-
+    p, ul li {
+        font-size: 1.05rem;
+        line-height: 1.6;
+    }
     input, textarea, button {
-        font-size: 0.9rem; /* Ajusta o tamanho dos campos de entrada */
+        font-size: 1rem;
     }
-    #Imagem img {
-        width: 70%; /* Reduz ainda mais a largura da imagem em telas pequenas */
+    .card {
+        padding: 12px;
     }
 }
