@@ -1,232 +1,350 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ZeldaSquad</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+    background-color: #001f3f; /* azul escuro */
+    color: #ffd700; /* amarelo dourado */
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+/* Container geral com fundo azul transparente */
+.bg-dark-transparent {
+    background-color: rgba(0, 31, 63, 0.85) !important; /* azul escuro transparente */
+    color: #ffd700 !important;
+}
+
+/* Cards com fundo azul escuro transparente */
+.card {
+    background-color: rgba(0, 31, 63, 0.85);
+    color: #ffd700;
+    border: none;
+}
+
+/* Navbar fundo azul escuro e texto amarelo */
+.navbar {
+    background-color: #001f3f !important;
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+    color: #ffd700 !important;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.navbar .nav-link:hover,
+.navbar .navbar-brand:hover {
+    color: #fff9e0 !important;
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 31, 63, 0.85);
+    color: #ffd700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+footer a {
+    color: #f0e68c;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #fff9e0;
+    text-decoration: underline;
+}
+
+footer .text-center a.text-body {
+    color: #ffd700;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+footer .text-center a.text-body:hover {
+    color: #fff9e0;
+    text-decoration: underline;
+}
+
+/* Botões */
+.btn-primary {
+    background-color: #003366; /* azul médio */
+    border-color: #00509e; /* azul mais claro */
+    color: #ffd700;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.btn-primary:hover {
+    background-color: #00509e;
+    border-color: #0066cc;
+    color: #fff9e0;
+}
+
+/* Títulos */
+h2, h4, h5 {
+  color: #ffd700;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    background-color: rgba(173, 216, 230, 0.3); /* lightblue transparente */
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Inputs e textarea */
+input.form-control, textarea.form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffd700;
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+input.form-control::placeholder, textarea.form-control::placeholder {
+    color: #f0e68c;
+    opacity: 0.8;
+}
+
+input.form-control:focus, textarea.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: #ffd700;
+    color: #fff9e0;
+    box-shadow: 0 0 5px #ffd700;
+    outline: none;
+}
+
+/* Espaçamento do formulário */
+footer .mb-3 {
+    margin-bottom: 2rem !important;
+}
+
+footer .d-grid.gap-2 {
+    margin-top: 1rem;
+}
+
+/* Toasts */
+#liveToast .toast-header,
+#errorToast .toast-header {
+    background-color: #001f3f;
+    color: #ffd700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+#errorToast {
+    background-color: #8b0000 !important;
+}
+
+/* Navbar brand logo invertida */
+.navbar-brand img {
+    filter: brightness(0) invert(1);
+}
+
+    </style>
 </head>
 <body>
-
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="https://static.thenounproject.com/png/18493-200.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
-                TriforceSquad
-            </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="https://static.thenounproject.com/png/18493-200.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top me-2" />
+            TriforceSquad
+        </a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/AtividadeAvaliativa02/index2.html">Galeria de Fotos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#Universo">Universo</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#Personagens">Personagens</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#Regiões">Regiões</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#Opiniao">Comente!</a>
-              </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/AtividadeAvaliativa02/index2.html">Galeria de Fotos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Universo">Universo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Personagens">Personagens</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Regiões">Regiões</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Opiniao">Comente!</a>
+                </li>
             </ul>
-          </div>
         </div>
-      </nav>
-
-    <br><br>
-
-    <div class="container" id="Universo">
-
-        <h2 class="text-center">Universo</h2><br>
-        
-        <p class="text-center">
-          O universo de The Legend of Zelda se passa no reino mágico de Hyrule, um vasto mundo cheio de diversidade geográfica e cultural, incluindo florestas densas, montanhas vulcânicas, desertos áridos, rios e ilhas flutuantes. O reino é habitado por várias raças únicas, como os humanos, os Gorons das montanhas, os Zoras das águas, os Ritos dos céus e os Gerudos do deserto, cada uma com sua cultura e história próprias. No centro dessa realidade está a Triforce, uma relíquia sagrada que representa os poderes da Coragem, Sabedoria e Poder, e mantém o equilíbrio do mundo. A narrativa gira em torno do eterno conflito entre o herói Link, a princesa Zelda e o vilão Ganondorf, cujas batalhas moldam o destino de Hyrule e de seus habitantes, em uma mistura rica de magia, aventura e mistério.
-
-        </p>
-
-
     </div>
+</nav>
 
-    <br>
-    
-    <div class="container" id="Personagens">
-      <h2 class="text-center">Personagens</h2>
-      <br>
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-          <div class="card h-100">
-            <img src="/AtividadeAvaliativa02/Imagens/LinkPP.png" class="card-img-top" alt="..." height="400px">
-            <div class="card-body">
-              <h5 class="text-center">Link</h5>
-              <p class="card-text">Protagonista da série The Legend of Zelda, Link é o herói escolhido pelos deuses para combater o mal e proteger o reino de Hyrule. Ele é geralmente um jovem corajoso, silencioso e habilidoso com armas e magia, portando a lendária Master Sword e o escudo Hylian. Ele carrega a Triforce da Coragem e enfrenta perigos para salvar Zelda, o mundo e manter o equilíbrio entre as forças.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="/AtividadeAvaliativa02/Imagens/ZeldaPP.png" class="card-img-top" alt="..." height="400px">
-            <div class="card-body">
-              <h5 class="text-center">Zelda</h5>
-              <p class="card-text">Princesa do reino de Hyrule, Zelda é uma figura central na luta contra o mal. Inteligente, determinada e portadora da Triforce da Sabedoria, ela muitas vezes assume outras identidades, como Sheik, para proteger seu povo. Zelda está profundamente ligada à deusa Hylia, sendo sua reencarnação em várias eras, e costuma ajudar Link de forma estratégica ou mágica na derrota de Ganondorf.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="/AtividadeAvaliativa02/Imagens/GanonPP.png" class="card-img-top" alt="..." height="400px">
-            <div class="card-body">
-              <h5 class="text-center">Ganondorf</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+<br /><br />
 
-    <br>
-    
-    <div class="container" id="Regiões">
-      <h2 class="text-center">Regiões</h2>
-      <br>
-      <div class="row row-cols-1 row-cols-md-2 g-4">
+<div class="container bg-dark-transparent rounded p-4" id="Universo">
+    <h2 class="text-center">Universo</h2><br />
+    <p class="text-center">
+        O universo de The Legend of Zelda se passa no reino mágico de Hyrule, um vasto mundo cheio de diversidade geográfica e cultural, incluindo florestas densas,
+        montanhas vulcânicas, desertos áridos, rios e ilhas flutuantes. O reino é habitado por várias raças únicas, como os humanos, os Gorons das montanhas,
+        os Zoras das águas, os Ritos dos céus e os Gerudos do deserto, cada uma com sua cultura e história próprias. No centro dessa realidade está a Triforce,
+        uma relíquia sagrada que representa os poderes da Coragem, Sabedoria e Poder, e mantém o equilíbrio do mundo. A narrativa gira em torno do eterno conflito
+        entre o herói Link, a princesa Zelda e o vilão Ganondorf, cujas batalhas moldam o destino de Hyrule e de seus habitantes, em uma mistura rica de magia,
+        aventura e mistério.
+    </p>
+</div>
+
+<br />
+
+<div class="container" id="Personagens">
+    <h2 class="text-center bg-dark-transparent rounded p-4">Personagens</h2>
+    <br />
+    <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
-          <div class="card h-100">
-            <img src="/AtividadeAvaliativa02/Imagens/Zora01.png" class="card-img-top" alt="..." height="400px">
-            <div class="card-body">
-              <h5 class="text-center">Zora</h5>
-              <p class="card-text">Os Zoras são uma raça aquática que habita a região chamada Zora’s Domain, composta por rios, lagos e cachoeiras. Essa área é marcada por sua beleza serena, arquitetura inspirada na água e natureza abundante. Os Zoras são exímios nadadores e guardiões das águas de Hyrule, protegendo o reino de ameaças aquáticas e naturais.</p>
+            <div class="card h-100">
+                <img src="/AtividadeAvaliativa02/Imagens/LinkPP.png" class="card-img-top" alt="Link" height="400" />
+                <div class="card-body">
+                    <h5 class="text-center">Link</h5>
+                    <p class="card-text">
+                        Protagonista da série The Legend of Zelda, Link é o herói escolhido pelos deuses para combater o mal e proteger o reino de Hyrule. Ele é
+                        geralmente um jovem corajoso, silencioso e habilidoso com armas e magia, portando a lendária Master Sword e o escudo Hylian. Ele carrega a
+                        Triforce da Coragem e enfrenta perigos para salvar Zelda, o mundo e manter o equilíbrio entre as forças.
+                    </p>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="/AtividadeAvaliativa02/Imagens/Rito01.png" class="card-img-top" alt="..." height="400px">
-            <div class="card-body">
-              <h5 class="text-center">Rito</h5>
-              <p class="card-text"> Os Rito vivem em regiões montanhosas ou ilhas elevadas, como o Rito Village, que fica cercado por penhascos e ventos fortes. Essa área aberta e arejada é ideal para os Rito, uma raça de humanoides alados que voam com agilidade pelos céus de Hyrule, oferecendo apoio aéreo e transporte ao herói Link.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="/AtividadeAvaliativa02/Imagens/Gerudo01.png" class="card-img-top" alt="..." height="400px">
-            <div class="card-body">
-              <h5 class="text-center">Gerudo</h5>
-              <p class="card-text">A tribo Gerudo habita o vasto e árido Gerudo Desert, uma região desértica marcada por dunas, ruínas antigas e tempestades de areia constantes. As Gerudo são uma população forte e guerreira, conhecida por sua resistência e habilidades de combate, refletindo a dureza do ambiente onde vivem. Ganondorf, o principal antagonista, é um Gerudo.</p>
-            </div>
-          </div>
         </div>
         <div class="col">
             <div class="card h-100">
-              <img src="/AtividadeAvaliativa02/Imagens/Goron01.png" class="card-img-top" alt="..." height="400px">
-              <div class="card-body">
-                <h5 class="text-center">Goron</h5>
-                <p class="card-text">Os Gorons vivem na região montanhosa e vulcânica de Death Mountain, um ambiente hostil com cavernas, rochas e lava em constante atividade. Adaptados ao calor e ao terreno difícil, os Gorons são robustos e fortes, usando sua resistência para ajudar Link e proteger Hyrule com sua força física e conhecimento do terreno.</p>
-              </div>
+                <img src="/AtividadeAvaliativa02/Imagens/ZeldaPP.png" class="card-img-top" alt="Zelda" height="400" />
+                <div class="card-body">
+                    <h5 class="text-center">Zelda</h5>
+                    <p class="card-text">
+                        Princesa do reino de Hyrule, Zelda é uma figura central na luta contra o mal. Inteligente, determinada e portadora da Triforce da Sabedoria,
+                        ela muitas vezes assume outras identidades, como Sheik, para proteger seu povo. Zelda está profundamente ligada à deusa Hylia, sendo sua
+                        reencarnação em várias eras, e costuma ajudar Link de forma estratégica ou mágica na derrota de Ganondorf.
+                    </p>
+                </div>
             </div>
-          </div>
-      </div>
-    </div>
-
-    <br><br>
-
-    <footer class="bg-body-tertiary text-center" id="Opiniao">
-        <div class="container p-4">
-
-            <h4>O que achou?</h4>
-
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Seu Email</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-              </div>
-              <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Comentário</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>    
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="/AtividadeAvaliativa02/Imagens/GanonPP.png" class="card-img-top" alt="Ganondorf" height="400" />
+                <div class="card-body">
+                    <h5 class="text-center">Ganondorf</h5>
+                    <p class="card-text">
+                        This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first
+                        to show that equal height action.
+                    </p>
+                </div>
             </div>
-            <div class="d-grid gap-2">
-                <button class="btn btn-primary" type="button" id="BtnEnviar" data-bs-toggle="modal" data-bs-target="#confirmModal">Enviar</button>
+        </div>
+    </div>
+</div>
+
+<br />
+
+<div class="container" id="Regiões">
+    <h2 class="text-center bg-dark-transparent rounded p-4">Regiões</h2>
+    <br />
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+            <div class="card h-100">
+                <img src="/AtividadeAvaliativa02/Imagens/Zora01.png" class="card-img-top" alt="Zora" height="400" />
+                <div class="card-body">
+                    <h5 class="text-center">Zora</h5>
+                    <p class="card-text">
+                        Os Zoras são uma raça aquática que habita a região chamada Zora’s Domain, composta por rios, lagos e cachoeiras. Essa área é marcada por sua
+                        beleza serena, arquitetura inspirada na água e natureza abundante. Os Zoras são exímios nadadores e guardiões das águas de Hyrule,
+                        protegendo o reino de ameaças aquáticas e naturais.
+                    </p>
+                </div>
             </div>
-
         </div>
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-          © Nintendo Company:
-          <a class="text-body" href="https://zeldawiki.wiki/wiki/Main_Page">Wiki de Zelda</a>
+        <div class="col">
+            <div class="card h-100">
+                <img src="/AtividadeAvaliativa02/Imagens/Rito01.png" class="card-img-top" alt="Rito" height="400" />
+                <div class="card-body">
+                    <h5 class="text-center">Rito</h5>
+                    <p class="card-text">
+                        Os Rito vivem em regiões montanhosas ou ilhas elevadas, como o Rito Village, que fica cercado por penhascos e ventos fortes. Essa área aberta e
+                        arejada é ideal para os Rito, uma raça de humanoides alados que voam com agilidade pelos céus de Hyrule, oferecendo apoio aéreo e
+                        transporte ao herói Link.
+                    </p>
+                </div>
+            </div>
         </div>
-    </footer>
-
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-        <!-- Toast de Sucesso -->
-        <div id="liveToast" class="toast fade" role="alert" aria-live="assertive" aria-atomic="true">
-          <div class="toast-header">
-            <img src="https://static.thenounproject.com/png/18493-200.png" class="rounded me-2" alt="..." height="30">
-            <strong class="me-auto">ZeldaSquad System</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-          </div>
-          <div class="toast-body">
-            Mensagem Enviada!
-          </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="/AtividadeAvaliativa02/Imagens/Gerudo01.png" class="card-img-top" alt="Gerudo" height="400" />
+                <div class="card-body">
+                    <h5 class="text-center">Gerudo</h5>
+                    <p class="card-text">
+                        A tribo Gerudo habita o vasto e árido Gerudo Desert, uma região desértica marcada por dunas, ruínas antigas e tempestades de areia constantes.
+                        As Gerudo são uma população forte e guerreira, conhecida por sua resistência e habilidades de combate, refletindo a dureza do ambiente onde
+                        vivem. Ganondorf, o principal antagonista, é um Gerudo.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="/AtividadeAvaliativa02/Imagens/Goron01.png" class="card-img-top" alt="Goron" height="400" />
+                <div class="card-body">
+                    <h5 class="text-center">Goron</h5>
+                    <p class="card-text">
+                        Os Gorons vivem na região montanhosa e vulcânica de Death Mountain, um ambiente hostil com cavernas, rochas e lava em constante atividade.
+                        Adaptados ao calor e ao terreno difícil, os Gorons são robustos e fortes, usando sua resistência para ajudar Link e proteger Hyrule com
+                        sua força física e conhecimento do terreno.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 
-    <div id="errorToast" class="toast text-bg-danger fade" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-          <strong class="me-auto">ERRO</strong>
-          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Fechar"></button>
-        </div>
-        <div class="toast-body">
-          Por favor, preencha o campo de e-mail!
-        </div>
-      </div>
-  </div>
+<br /><br />
 
-  <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="confirmModalLabel">Confirmar Envio</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+<footer id="Opiniao">
+    <div class="container bg-dark-transparent rounded p-4">
+      <br>
+        <h4>O que achou?</h4>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Seu Email</label>
+            <input
+                type="email"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="name@example.com"
+                autocomplete="email"
+            />
         </div>
-        <div class="modal-body">
-          Tem certeza que deseja enviar sua mensagem?
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Comentário</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escreva aqui seu comentário..."></textarea>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary" id="confirmSendBtn">Confirmar</button>
+        <div class="d-grid gap-2 d-md-block">
+            <button class="btn btn-primary" type="button">Enviar</button>
         </div>
-      </div>
+        <br>
     </div>
-  </div>
+</footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>        
-
-    document.addEventListener('DOMContentLoaded', () => {
-    const confirmSendBtn = document.getElementById('confirmSendBtn');
-    const emailInput = document.getElementById('exampleFormControlInput1');
-    const successToastEl = document.getElementById('liveToast');
-    const errorToastEl = document.getElementById('errorToast');
-    const confirmModalEl = document.getElementById('confirmModal');
-
-    const successToast = new bootstrap.Toast(successToastEl);
-    const errorToast = new bootstrap.Toast(errorToastEl);
-    const confirmModal = bootstrap.Modal.getInstance(confirmModalEl);
-
-    confirmSendBtn.addEventListener('click', () => {
-        if (emailInput.value.trim() === '') {
-            errorToast.show();
-        } else {
-            successToast.show();
-        }
-        confirmModal.hide(); // Fecha o modal após clicar em confirmar
-    });
-    });
-
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
