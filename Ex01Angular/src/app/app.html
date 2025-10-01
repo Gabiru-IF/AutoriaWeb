@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex01 Angular</title>
+</head>
+<body>
+  <h1>Interruptor de luz</h1>
+
+  <input [(ngModel)]="Comodo" placeholder="Digite o cômodo">
+  <br> 
+  <h2>Comodo: {{ Comodo }}</h2>
+
+  <button (click)="botao_mudar()" id="botao_mudar">Interruptor</button>
+  @if (EstadoLuz === false) {
+      <h2>Luz está: Desligada</h2>
+  }
+  @else {
+      <h2>Luz está: Ligada</h2>
+  }
+
+
+</body>
+</html>
