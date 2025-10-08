@@ -1,0 +1,27 @@
+html
+
+body{
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+}
+
+h1{
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 40px;
+}
+
+button{
+  width: 210px;
+  height: 40px;
+  font-size: 16px;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+input {
+  width: 200px;
+  height: 20px;
+  font-size: 16px;
+  padding: 5px;
+}

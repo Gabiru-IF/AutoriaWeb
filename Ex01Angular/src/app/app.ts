@@ -10,7 +10,7 @@ import { RouterOutlet } from '@angular/router';
 })
 
 export class App {
-  protected readonly title = 'fodase';
+  protected readonly title = 'Quarto Inteligente';
   Comodo: string = "";
   EstadoLuz = false;
   botao_muda = document.getElementById('Estadoluz');
