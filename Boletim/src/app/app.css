@@ -1,0 +1,13 @@
+.aprovacao {
+  color: green;
+  font-weight: bold;
+
+}
+.reprovacao {
+  color: red;
+  font-weight: bold;
+}
+.recuperacao {
+  color: orange;
+  font-weight: bold;
+}

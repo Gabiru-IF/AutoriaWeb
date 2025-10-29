@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boletim Angulado</title>
+</head>
+<body>
+  <h1>Exibidor de Boletim de Aluno Quente </h1>
+
+  <input [(ngModel)]="nome" placeholder="Digite o nome do aluno" type="text" id="input_nome"><br>
+
+  <h3>Digite suas Notas: </h3>
+  <input [(ngModel)]="nota1" placeholder="Nota 1" type="number" id="input_nota1"> <input [(ngModel)]="peso1" placeholder="Peso da Nota 1" type="number" id="input_peso1"><br>
+  <input [(ngModel)]="nota2" placeholder="Nota 2" type="number" id="input_nota2"> <input [(ngModel)]="peso2" placeholder="Peso da Nota 2" type="number" id="input_peso2"><br>
+  <input [(ngModel)]="nota3" placeholder="Nota 3" type="number" id="input_nota3"> <input [(ngModel)]="peso3" placeholder="Peso da Nota 3" type="number" id="input_peso3"><br>
+  <input [(ngModel)]="nota4" placeholder="Nota 4" type="number" id="input_nota4"> <input [(ngModel)]="peso4" placeholder="Peso da Nota 4" type="number" id="input_peso4"><br>
+
+  <button (click)="atualizarEstado()" id="botao_calcular">Calcular Média</button><br>
+
+<!--<p>{{ resultado }}</p>-->
+
+
+@if (media >=6){
+
+  <p>Aluno {{ (nome + '') | uppercase }} foi <span class="aprovacao">APROVADO</span> com média {{ media | number: '1.0-2' }}</p>
+  <p>Data da Aprovação: {{ today | date: 'dd/MM/yyyy' }}</p>  
+}@else if (5 < media && media < 6) {
+  <p>Aluno {{ (nome + '') | uppercase }} está de <span class="recuperacao">RECUPERAÇÃO</span> com média {{ media | number: '1.0-2' }}</p>
+  <p>Data da Recuperação: {{ today | date: 'dd/MM/yyyy' }}</p>  
+}
+@else{
+  <p>Aluno {{ (nome + '') | uppercase }} foi <span class="reprovacao">REPROVADO</span> com média {{ media | number: '1.0-2' }}</p>
+  <p>Data da Reprovação: {{ today | date: 'dd/MM/yyyy' }}</p>  
+}
+
+</body>
+</html>
