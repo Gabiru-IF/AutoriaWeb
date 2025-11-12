@@ -22,6 +22,9 @@ export class App {
   mostrarResultado = false;
   registroAbastecimento: any[] = [];
 
+  // Armazenar valores exibidos no resultado
+  resultadoExibicao: any = {};
+
   registrarAbastecimento() {
     if (!this.combustibleSelecionado) {
       alert('Por favor, selecione um tipo de combustível!');
@@ -33,8 +36,17 @@ export class App {
       return;
     }
 
-
     this.totalCalculado = this.valorLitro * this.quantidadeLitros;
+
+    // Armazenar valores para exibição no resultado
+    this.resultadoExibicao = {
+      combustivel: this.combustibleSelecionado,
+      valorLitro: this.valorLitro,
+      quantidadeLitros: this.quantidadeLitros,
+      data: this.dataAbastecimento,
+      total: this.totalCalculado
+    };
+
     this.mostrarResultado = true;
 
     const registro = {
@@ -54,5 +66,19 @@ export class App {
     this.valorLitro = 0;
     this.quantidadeLitros = 0;
     this.dataAbastecimento = '';
+  }
+
+  // Método para retornar a classe CSS baseado no combustível
+  getCombustivelClass(combustivel: string): string {
+    switch (combustivel) {
+      case 'Gasolina':
+        return 'combustivel-gasolina';
+      case 'Etanol':
+        return 'combustivel-etanol';
+      case 'Diesel':
+        return 'combustivel-diesel';
+      default:
+        return '';
+    }
   }
 }

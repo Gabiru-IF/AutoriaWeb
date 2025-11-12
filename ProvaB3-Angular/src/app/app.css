@@ -1,0 +1,166 @@
+/* Estilos para combustíveis */
+.combustivel-gasolina {
+  color: #0066cc;
+  font-weight: bold;
+}
+
+.combustivel-etanol {
+  color: #00aa00;
+  font-weight: bold;
+}
+
+.combustivel-diesel {
+  color: #000000;
+  font-weight: bold;
+}
+
+/* Estilos gerais */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+h2 {
+  color: #555;
+  margin-top: 30px;
+}
+
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+fieldset {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+legend {
+  font-weight: bold;
+  color: #333;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+input[type="radio"] {
+  margin-right: 8px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:active {
+  background-color: #3d8b40;
+}
+
+/* Estilos da caixa de resultado */
+.resultado-box {
+  margin-top: 30px;
+  padding: 15px;
+  border: 2px solid #4CAF50;
+  border-radius: 5px;
+  background-color: #f0f8f0;
+}
+
+.resultado-box h2 {
+  margin-top: 0;
+  color: #4CAF50;
+}
+
+.resultado-box p {
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+.total-destaque {
+  font-size: 1.2em;
+  color: green;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #ccc;
+}
+
+/* Estilos da tabela */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+table th {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-weight: bold;
+}
+
+table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+table tr:hover {
+  background-color: #f5f5f5;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Mensagem de histórico vazio */
+.mensagem-vazia {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  color: #666;
+  text-align: center;
+}
