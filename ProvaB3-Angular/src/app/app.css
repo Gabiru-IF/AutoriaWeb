@@ -14,7 +14,6 @@
   font-weight: bold;
 }
 
-/* Estilos gerais */
 body {
   font-family: Arial, sans-serif;
   margin: 20px;
@@ -98,7 +97,7 @@ button:active {
   background-color: #3d8b40;
 }
 
-/* Estilos da caixa de resultado */
+
 .resultado-box {
   margin-top: 30px;
   padding: 15px;
@@ -125,7 +124,7 @@ button:active {
   border-top: 1px solid #ccc;
 }
 
-/* Estilos da tabela */
+
 table {
   border-collapse: collapse;
   width: 100%;
@@ -155,7 +154,7 @@ table tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
-/* Mensagem de histórico vazio */
+
 .mensagem-vazia {
   margin-top: 20px;
   padding: 15px;

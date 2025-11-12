@@ -22,7 +22,6 @@ export class App {
   mostrarResultado = false;
   registroAbastecimento: any[] = [];
 
-  // Armazenar valores exibidos no resultado
   resultadoExibicao: any = {};
 
   registrarAbastecimento() {
@@ -38,7 +37,7 @@ export class App {
 
     this.totalCalculado = this.valorLitro * this.quantidadeLitros;
 
-    // Armazenar valores para exibição no resultado
+
     this.resultadoExibicao = {
       combustivel: this.combustibleSelecionado,
       valorLitro: this.valorLitro,
@@ -68,7 +67,6 @@ export class App {
     this.dataAbastecimento = '';
   }
 
-  // Método para retornar a classe CSS baseado no combustível
   getCombustivelClass(combustivel: string): string {
     switch (combustivel) {
       case 'Gasolina':
