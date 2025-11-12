@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle-Abastecimento</title>
+</head>
+<body>
+  <h1>Controle de Abastecimento de Veículos</h1>
+
+  <form>
+    <fieldset>
+      <legend>Tipo de Combustível:</legend>
+      <input 
+        type="radio" 
+        id="gasolina" 
+        name="combustivel" 
+        value="Gasolina"
+        [(ngModel)]="combustibleSelecionado"
+        [ngModelOptions]="{standalone: true}">
+      <label for="gasolina">Gasolina</label><br>
+
+      <input 
+        type="radio" 
+        id="etanol" 
+        name="combustivel" 
+        value="Etanol"
+        [(ngModel)]="combustibleSelecionado"
+        [ngModelOptions]="{standalone: true}">
+      <label for="etanol">Etanol</label><br>
+
+      <input 
+        type="radio" 
+        id="diesel" 
+        name="combustivel" 
+        value="Diesel"
+        [(ngModel)]="combustibleSelecionado"
+        [ngModelOptions]="{standalone: true}">
+      <label for="diesel">Diesel</label><br>
+    </fieldset>
+
+    <label>Valor por Litro (R$):</label>
+    <input 
+      type="number" 
+      [(ngModel)]="valorLitro"
+      [ngModelOptions]="{standalone: true}"
+      placeholder="Valor por Litro"><br>
+
+    <label>Quantidade de Litros Abastecida:</label>
+    <input 
+      type="number" 
+      [(ngModel)]="quantidadeLitros"
+      [ngModelOptions]="{standalone: true}"
+      placeholder="Quantidade de Litros Abastecida"><br>
+
+    <label>Data de Abastecimento:</label>
+    <input 
+      type="date" 
+      [(ngModel)]="dataAbastecimento"
+      [ngModelOptions]="{standalone: true}"><br>
+
+    <button 
+      type="button"
+      (click)="registrarAbastecimento()">
+      Registrar Abastecimento
+    </button>
+  </form>
+
+
+  <div *ngIf="mostrarResultado">
+    <h2>Resultado:</h2>
+    <p><strong>Combustível:</strong> {{ combustibleSelecionado }}</p>
+    <p><strong>Valor por Litro:</strong> R$ {{ valorLitro | number: '1.2-2' }}</p>
+    <p><strong>Quantidade de Litros:</strong> {{ quantidadeLitros }}</p>
+    <p><strong>Data:</strong> {{ dataAbastecimento }}</p>
+    <p style="font-size: 1.2em; color: green;"><strong>Total a Pagar:</strong> R$ {{ totalCalculado | number: '1.2-2' }}</p>
+  </div>
+
+  <hr>
+  <h2>Histórico de Abastecimentos:</h2>
+  <div *ngIf="registroAbastecimento.length > 0">
+    <table border="1" cellpadding="10" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Combustível</th>
+          <th>Valor/Litro</th>
+          <th>Quantidade (L)</th>
+          <th>Data</th>
+          <th>Total (R$)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let registro of registroAbastecimento">
+          <td>{{ registro.combustivel }}</td>
+          <td>{{ registro.valorLitro | number: '1.2-2' }}</td>
+          <td>{{ registro.quantidadeLitros }}</td>
+          <td>{{ registro.data }}</td>
+          <td><strong>{{ registro.total | number: '1.2-2' }}</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="registroAbastecimento.length === 0 && !mostrarResultado">
+    <p>Nenhum abastecimento registrado ainda.</p>
+  </div>
+
+</body>
+</html>
