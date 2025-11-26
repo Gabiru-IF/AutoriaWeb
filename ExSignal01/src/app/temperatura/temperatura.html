@@ -19,4 +19,17 @@
     Aumentar (+1)
     </button>
   </div>
-</div>
+
+  <div id="LogMudanças">
+    <h2>Log de Mudanças de Temperatura</h2>
+
+    <ul>
+      @for (log of logs(); track $index) {
+        @if ($index === logs().length - 1) {
+          <li class="log-recente">{{ log }} ⭐</li>
+        } @else {
+          <li>{{ log }}</li>
+        }
+      }
+    </ul>
+  </div>

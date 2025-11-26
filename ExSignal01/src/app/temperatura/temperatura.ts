@@ -12,6 +12,9 @@ export class Temperatura {
   // Signal para armazenar a temperatura atual
   temperaturaAtual = signal(22);
 
+  // Array para armazenar logs
+  logs = signal<string[]>([]);
+
   // Computed para gerar mensagem baseada na temperatura
   mensagemTemperatura = computed(() => {
     const temp = this.temperaturaAtual();
@@ -28,7 +31,18 @@ export class Temperatura {
     // Effect para informar toda vez que a temperatura muda
     effect(() => {
       const temp = this.temperaturaAtual();
-      console.log(`🌡️ Temperatura mudou para: ${temp}°C`);
+      const mensagem = `🌡️ Temperatura mudou para: ${temp}°C`;
+      console.log(mensagem);
+      
+      // Adiciona o log ao array com limite de 5
+      this.logs.update(logsAtuais => {
+        const novoArray = [...logsAtuais, mensagem];
+        // Se exceder 5, remove o primeiro (mais antigo)
+        if (novoArray.length > 5) {
+          novoArray.shift();
+        }
+        return novoArray;
+      });
     });
   }
 
@@ -43,5 +57,6 @@ export class Temperatura {
 
   resetarTemperatura() {
     this.temperaturaAtual.set(22);
+    this.logs.set([]); // Limpa os logs
   }
 }
