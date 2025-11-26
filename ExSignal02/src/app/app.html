@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle de Estoque com Signal e Computed</title>
+</head>
+<body>
+  <h1>Controle de Estoque de Produtos</h1>
+
+  <div>
+    <label for="produto-nome">Nome do Produto:</label>
+    <input 
+      type="text" 
+      id="produto-nome" 
+      [(ngModel)]="novoProdutoNome"
+      [ngModelOptions]="{standalone: true}">
+  </div>
+  <div>
+    <label for="produto-quantidade">Quantidade:</label>
+    <input 
+      type="number" 
+      id="produto-quantidade" 
+      [(ngModel)]="novoProdutoQuantidade"
+      [ngModelOptions]="{standalone: true}">
+  </div>
+  <button (click)="adicionarProduto()">Adicionar Produto</button>
+
+  <h2>Estoque Atual</h2>
+  <ul>
+    <li *ngFor="let produto of produtos()">
+      {{ produto.nome }} - Quantidade: {{ produto.quantidade }}
+    </li>
+  </ul>
+  
+</body>
+</html>
