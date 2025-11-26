@@ -1,0 +1,22 @@
+<div class="container-temperatura">
+  <h1>Controle de Temperatura</h1>
+
+  <div class="temperatura-display">
+    <p class="temperatura-valor">
+      {{ temperaturaAtual() | number: '1.0-0' }}°C
+    </p>
+    <p class="temperatura-mensagem">{{ mensagemTemperatura() }}</p>
+  </div>
+
+  <div class="botoes-container">
+    <button class="btn btn-diminuir" (click)="diminuirTemperatura()">
+    Diminuir (-1)
+    </button>
+    <button class="btn btn-resetar" (click)="resetarTemperatura()">
+    Resetar
+    </button>
+    <button class="btn btn-aumentar" (click)="aumentarTemperatura()">
+    Aumentar (+1)
+    </button>
+  </div>
+</div>
